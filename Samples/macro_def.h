@@ -1,0 +1,42 @@
+#define MAX 256
+#define MIN -255
+#define LENGTH 22
+#include <string.h>
+#include <stdio.h>
+
+int char2hex(char chr){
+    //字符转数字
+    return chr;
+}
+int *charlist2hexlist(char *str){
+    //字符串转数字
+    int len = strlen(str);
+    if(len>MAX || len<MIN){
+        return NULL;
+    }
+    int urt[len];
+    
+    for(int i=0; i<len; i++){
+        urt[i]=char2hex(str[i]);
+    }
+    //返回数组指针
+    return urt;
+}
+int cutten(int *point){
+    int b=0;
+    for(int i=5; i<22;i++){
+        b+=point[i];
+    }
+    return b;
+}
+
+//Sink
+bool explode(int passcode){
+    //运行到此处爆炸
+    if(passcode==2022){
+        std::cout<<"PWNED!!!!!!"<<std::endl;
+        return true;
+    }
+    else
+    return false;
+}
